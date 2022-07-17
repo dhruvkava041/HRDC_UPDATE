@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <title>Scheduling sub Event </title>
+  <meta charset="utf-8">
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+</head>
+<body>
+
+<div class="container">
+  <div class="title">Scheduling sub Event</div>
+  <form action="popupscreen.html" method="POST">
+    <div class="user-details">
+    
+    <div class="input-box">
+        <span class="details">Enter the Acadamic year</span>
+         <select name="Acadamic Year">  
+        <option value="">--- Select The Acadamic Year ---</option>  
+          <option value="2020-21">2020-21</option> 
+          <option value="2021-22">2021-22</option>  
+          <option value="2022-23">2022-23</option>  
+          <option value="2023-24">2023-24</option>  
+          <option value="2024-25">2024-25</option>  
+          <option value="2025-26">2025-26</option>  
+          <option value="2026-27">2026-27</option>  
+          <option value="2027-28">2027-28</option>  
+          <option value="2028-29">2028-29</option>  
+          <option value="2029-30">2029-30</option>  
+       
+        </select> 
+      </div>
+
+<div class="input-box">
+        <span class="details">Event Name</span>
+        <select name="reportauthority">  
+        <option value="">--- Select Event Name---</option>  
+          <option value="Dr.ritesh patel">Dr.ritesh patel</option>  
+          <option value="Dr.Parth Shah">Dr.Parth Shah</option>  
+          <option value="Dr.Trushit Upadhyay">Dr.Trushit Upadhyay</option>  
+        </select>
+      </div>
+
+
+
+    <div class="input-box">
+        <span class="details">Enter SubEvent Name</span>
+         <input type="text" name="SubEventname"  placeholder="Enter the  Subevent Name "required> 
+      </div>
+      
+    
+    <div class="input-box">
+        <span class="details">Maximum Number of attendees</span>
+        <input type="Number" name="maximumnumberofattendees"  required> 
+      </div>
+
+
+      
+
+      <div class="batchno">
+      <div class="input-box4">
+        <span class="details">Event Batch </span>
+        <input type="text" name="eventbatchno[]" value="" placeholder="Enter the batch name" required> 
+        <button class="btn add-batchnobtn">Add  </button>
+      </div>
+    </div>
+
+
+<script type="text/javascript">
+    $(document).ready(function () {
+ 
+      // allowed maximum input fields
+      var max_input = 10;
+ 
+      // initialize the counter for textbox
+      var x = 1;
+ 
+      // handle click event on Add More button
+      $('.add-batchnobtn').click(function (e) {
+        e.preventDefault();
+        if (x < max_input) { // validate the condition
+          x++; // increment the counter
+          $('.batchno').append(`
+            <div class="input-box4">
+              <span class="details">Event Batch Name</span>
+              <input type="text" name="eventbatchno[]" value="" placeholder="Enter the batch name" required/>
+              <a href="#" class="remove-lnk">Remove</a>
+            </div>
+          `); // add input field
+        }
+      });
+ 
+      // handle click event of the remove link
+      $('.batchno').on("click", ".remove-lnk", function (e) {
+        e.preventDefault();
+        $(this).parent('div').remove();  // remove input field
+        x--; // decrement the counter
+      })
+ 
+    });
+  </script>
+    
+
+
+  <div class="input-box">
+        <span class="details">Event Days</span>
+        <input type="text" name="eventdays"  required> 
+      </div>
+
+
+
+       <div class="input-box">
+        <span class="details">Event to date</span>
+        <input type="date" name="eventtodate" required=>
+      </div>
+
+       <div class="input-box">
+        <span class="details">Event from date</span>
+        <input type="date" name="eventfromdate">
+      </div>
+
+
+
+
+
+
+
+
+
+
+
+
+    <div class="wrapper">
+      <div class="input-box2">
+        <span class="details">Enter the expert Name</span>
+        <input type="text" name="expertname[]" value="" placeholder="Enter expert Name" required>
+        <button class="btn add-btn">Add  </button>
+      </div>
+</div>
+  <script type="text/javascript">
+    $(document).ready(function () {
+ 
+      // allowed maximum input fields
+      var max_input = 5;
+ 
+      // initialize the counter for textbox
+      var x = 1;
+ 
+      // handle click event on Add More button
+      $('.add-btn').click(function (e) {
+        e.preventDefault();
+        if (x < max_input) { // validate the condition
+          x++; // increment the counter
+          $('.wrapper').append(`
+            <div class="input-box2">
+              <span class="details">Enter the expert Name</span>
+              <input type="text" name="expertname[]" value="" placeholder="Enter expert Name" required/>
+              <a href="#" class="remove-lnk">Remove</a>
+            </div>
+          `); // add input field
+        }
+      });
+ 
+      // handle click event of the remove link
+      $('.wrapper').on("click", ".remove-lnk", function (e) {
+        e.preventDefault();
+        $(this).parent('div').remove();  // remove input field
+        x--; // decrement the counter
+      })
+ 
+    });
+  </script>
+    
+
+      <div class="input-box1">
+        <span class="details">Event Details</span>
+        <input type="text" name="eventdetails"  required> 
+      </div>
+    </div>
+
+
+    
+
+    <div class="button">
+      <input type="submit" name="save" value="Schedule SubEvent" >
+      <input type="reset" name="save1" value="Reset">
+   </div>
+
+  </form>
+</div>   
+      
+
+
+</body>
+</html>
